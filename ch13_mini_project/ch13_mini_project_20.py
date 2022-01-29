@@ -73,13 +73,14 @@ def modifyEvtHandler():
         return
 
     idx = -1
-    for data in data_list :
+    for i, data in enumerate(data_list) :
         try :
             idx = data.index(sname)
-            update((sname, phone, email, data[0]) )
-            refreshTreeview(select_all())
-            init_entry(sname, phone, email)
-            return
+            if idx!=-1 :
+                update((sname, phone, email, data[0]) )
+                refreshTreeview(select_all())
+                init_entry(sname, phone, email)
+                return
         except :
             pass
 
